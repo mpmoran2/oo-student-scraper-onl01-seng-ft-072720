@@ -4,9 +4,11 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url)
-    page = Nokogiri::HTML(open(index_url))
-    students = []
-    
+    html = open(index_url)
+    doc = Nokogiri::HTML(html)
+    student_cards = doc.css(".student-card a")
+    student_cards.collect do |element|
+      
   end
 
   def self.scrape_profile_page(profile_url)
