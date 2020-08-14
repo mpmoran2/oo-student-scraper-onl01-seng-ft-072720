@@ -1,3 +1,5 @@
+#make sure you have all your ends damn it! and check you heckin spelling chicken
+
 class Student
 
   attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url 
