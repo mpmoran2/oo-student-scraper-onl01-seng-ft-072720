@@ -20,7 +20,7 @@ class Scraper
     links = profile_page.css(".social-icon-container").children.css("a").map ( |el| el.attribute('hrf').value)
     
     links.each do |link|
-      if link.include?("linked")
+      if link.include?("linkedin")
     
   end 
 end
