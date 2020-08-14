@@ -13,6 +13,7 @@ class CommandLineInterface
   end
 
   def make_students
+    #give scrap/parsed index of the students
     students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
     Student.create_from_collection(students_array)
   end
