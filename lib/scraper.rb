@@ -18,7 +18,7 @@ class Scraper
     html = open(index_url)
     doc = Nokogiri::HTML(html)
     return_hash = {}
-      social = doc.css(".vitals-container .social-icon-container a")
+      social = page.css(".social-icon-container a")
       social.each do |element| #iterate through each of the social elements and assign the keys if the item exists
         if element.attr('href').include?("twitter")
           return_hash[:twitter] = element.attr('href')
@@ -30,7 +30,7 @@ class Scraper
           return_hash[:blog] = element.attr('href')
         end
       end
-      return_hash[:profile_quote] = doc.css(".vitals-container .vitals-text-container .profile-quote").text
+      return_hash[:profile_quote] = page.css(".profile-quote").text
       return_hash[:bio] = doc.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
       student
   end
