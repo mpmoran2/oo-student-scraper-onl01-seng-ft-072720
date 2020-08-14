@@ -6,7 +6,6 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
-    student = []
     student_cards = doc.css(".student-card a")
     student_cards.collect do |element|
       {:name => element.css(".student-name").text ,
@@ -32,10 +31,8 @@ class Scraper
         end
       end
       student[:profile_quote] = doc.css(".vitals-container .vitals-text-container .profile-quote").text
-      return_hash[:bio] = doc.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
-
-  return_hash
+      student[:bio] = doc.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
+      student
   end
-
 end
 
