@@ -22,8 +22,10 @@ class Scraper
     links.each do |link|
       if link.include?("linkedin")
         student[:linkedin] = link
-        elsif link.include?("github")
+      elsif link.include?("github")
         student[:github] = link
+      elsif link.include?("")
+        student[:] = link
     
   end 
 end
