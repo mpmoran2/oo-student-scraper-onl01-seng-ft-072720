@@ -17,7 +17,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(open(profile_url))
     student = {}
-    
+    links 
       social = page.css(".social-icon-container a")
       social.each do |element| #iterate through each of the social elements and assign the keys if the item exists
         if element.attr('href').include?("twitter")
