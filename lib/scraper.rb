@@ -38,5 +38,5 @@ class Scraper
   end 
 end 
 
-#student[:twiter] = profile_page.css(".social-icon-container").children.css("a")[0].attribute("href").value
+#student[:twitter] = profile_page.css(".social-icon-container").children.css("a")[0].attribute("href").value
 #student[:github] = profile_page.css(".social-icon-container").children.css("a")[1].attribute("href").value
